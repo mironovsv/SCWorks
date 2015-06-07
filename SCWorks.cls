@@ -20,7 +20,9 @@
 \def\chair#1{\gdef\@chair{#1}}\chair{}
 \def\worktype#1{\gdef\@worktype{#1}}
 \def\typework#1{\gdef\@typework{#1}}
-%\def\worktitle#1{\gdef\@worktitle{#1}}
+\def\disserform#1{\gdef\@disserform{#1}}
+\def\disserformP#1{\gdef\@disserformP{#1}}
+\def\disserformV#1{\gdef\@disserformV{#1}}
 \def\course#1{\gdef\@course{#1}}
 \def\group#1{\gdef\@group{#1}}
 \def\department#1{\gdef\@department{#1}}\department{\cyr\cyrf\cyra\cyrk%
@@ -92,18 +94,36 @@
     \spectyperod{\cyrs\cyrp\cyre\cyrc\cyri\cyra\cyrl\cyrsftsn\cyrn\cyro%
     \cyrs\cyrt\cyri}
     \workform{\cyr\CYRS\CYRP\CYRE\CYRC\CYRI\CYRA\CYRL\CYRI\CYRS\CYRT\CYRA}
+    \disserform{\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRA\CYRYA\ \CYRR\CYRA%
+    \CYRB\CYRO\CYRT\CYRA}
+    \disserformP{\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRO\CYRISHRT\ \CYRR%
+    \CYRA\CYRB\CYRO\CYRT\CYRE}
+    \disserformV{\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRU\CYRYU\ \CYRR\CYRA%
+    \CYRB\CYRO\CYRT\CYRU}
 }
 
 \DeclareOption{bachelor}{%
     \spectype{\cyr\cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri\cyrya}
     \spectyperod{\cyr\cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri \cyryu}
     \workform{\cyr\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRA}
+    \disserform{\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRS\CYRK\CYRA%
+    \CYRYA\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA}
+    \disserformP{\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRS\CYRK\CYRO%
+    \CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRE}
+    \disserformV{\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRS\CYRK\CYRU%
+    \CYRYU\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRU}
 }
 
 \DeclareOption{master}{%
     \spectype{\cyr\cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri\cyrya}
     \spectyperod{\cyr\cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri \cyryu}
     \workform{\cyr\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRR\CYRA}
+    \disserform{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRA%
+    \CYRYA\ \CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRYA}
+    \disserformP{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRO%
+    \CYRISHRT\ \CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRI}
+    \disserformV{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRU%
+    \CYRYU\ \CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRYU}
 }
 
 \DeclareOption{coursework}{%
@@ -118,8 +138,9 @@
     \worktype{\cyr\CYRV\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyra\cyrya\ \cyrk\cyrv%
     \cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro\cyrn\cyrn\cyra%
     \cyrya\ \cyrr\cyra\cyrb\cyro\cyrt\cyra}
+    \worktype{\ \cyrr\cyra\cyrb\cyro\cyrt\cyra}
     \renewcommand{\maketitle}{\CDMakeTitle}
-    \workname{\MakeUppercase{\@worktype}\ \@workform}
+    \workname{\MakeUppercase{\@disserform}}
     \typework{\cyr\cyrn\cyra\cyrp\cyri\cyrs\cyra\cyrn\cyra}
 }
 
@@ -137,7 +158,7 @@
     \cyrp\cyru\cyrs\cyrk\cyrn\cyro\cyrishrt\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf%
     \cyri\cyrk\cyra\cyrc\cyri\cyro\cyrn\cyrn\cyro\cyrishrt\ \cyrr\cyra\cyrb%
     \cyro\cyrt\cyre}
-    \workname{\@worktype\ \MakeLowercase{\@workform}}
+    \workname{\cyr\cyro\ \MakeLowercase{\@disserformP}}
     \renewcommand{\maketitle}{\MakeTitleReview}
     \renewcommand{\signatureline}{%
         \par\noindent%
@@ -152,7 +173,7 @@
     \worktype{\cyrn\cyra\ \cyrv\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyru%
     \cyryu\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro%
     \cyrn\cyrn\cyru\cyryu\ \cyrr\cyra\cyrb\cyro\cyrt\cyru}
-    \workname{\@worktype\ \MakeLowercase{\@workform}}
+    \workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
     \renewcommand{\maketitle}{\MakeTitleAssign}
     \renewcommand{\signatureline}{%
 
@@ -194,7 +215,7 @@
     \worktype{\cyrn\cyra\ \cyrv\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyru%
     \cyryu\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro%
     \cyrn\cyrn\cyru\cyryu\ \cyrr\cyra\cyrb\cyro\cyrt\cyru}
-    \workname{\@worktype\ \MakeLowercase{\@workform}}
+    \workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
     \renewcommand{\maketitle}{\MakeTitleReview}
     \renewcommand{\signatureline}{%
         \par\noindent%
@@ -240,6 +261,7 @@
 % --------------------------------------------------------------------------%
 % Table and figure numbering by sections
 % --------------------------------------------------------------------------%
+\newif\if@secNumbering\@secNumberingfalse
 \newcommand{\secNumbering}{
     \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
     \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
@@ -247,6 +269,7 @@
     \@addtoreset{figure}{section}
     \@addtoreset{table}{section}
     \@addtoreset{equation}{section}
+    \@secNumberingtrue
 }
 % --------------------------------------------------------------------------%
 
@@ -285,23 +308,27 @@
 % Sections, subsections
 % --------------------------------------------------------------------------%
 % Numbering
-\renewcommand{\thesection}{\arabic{section} }
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection} }
-\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection} }
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
 \newcommand{\sectionbreak}{\clearpage}
 
 % Contents, intro, conclusion
 \newcommand{\structformat}
 {
-   \titleformat{\section}[block]
-   {\centering\bfseries}
-   {\thesection }{}{}
+    \titlespacing{\section}
+    {0cm}{3ex plus 1ex minus .2ex}{1.4ex plus.2ex}
+    \titleformat{\section}[block]
+    {\centering\bfseries}
+    {\thesection}{}{}
 }
 
 % Sections, subsections
 \newcommand{\secformat}
 {
+    \titlespacing{\section}
+    {0cm}{3ex plus 1ex minus .2ex}{0.4ex plus.2ex}
     \titleformat{\section}[block]
     {\hspace{1.25cm}\raggedright\bfseries}
     {\thesection}{1ex}{}
@@ -309,7 +336,7 @@
 
 \newcommand{\starsection}[1]{
     \structformat
-    \section*{#1}
+    \section*{#1}\phantomsection
     \addcontentsline{toc}{section}{#1}
     \setcounter{section}{0}
     \secformat
@@ -330,57 +357,58 @@
 
 % Section and subsection parameters
 \titlespacing{\section}
-{0cm}{3ex plus 1ex minus .2ex}{3ex plus.2ex}
+{0cm}{3ex plus 1ex minus .2ex}{0.4ex plus.2ex}
 
 \titleformat{\subsection}[block]
 {\hspace{1.25cm}\normalfont\bfseries}
 {\thesubsection}{1ex}{}
 \titlespacing{\subsection}
-{0cm}{2ex plus 1ex minus .2ex}{.3ex plus.2ex}
+{0cm}{2ex plus 1ex minus .2ex}{.4ex plus.2ex}
 
 \titleformat{\subsubsection}[block]
 {\hspace{1.25cm}\normalfont}
 {\thesubsubsection}{1ex}{}
 \titlespacing{\subsubsection}
-{0cm}{2ex plus 1ex minus .2ex}{.3ex plus.2ex}
+{0cm}{2ex plus 1ex minus .2ex}{.4ex plus.2ex}
 
 % --------------------------------------------------------------------------%
 
 % --------------------------------------------------------------------------%
 
 
-
+%\AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
+%\AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
 
 \makeatletter
 \def\redeflsection{\def\l@section{\@dottedtocline{1}{0em}{10em}}}
 \renewcommand{\appendix}{\par%
 
     \renewcommand{\secNumbering}{
-    \renewcommand{\thefigure}{\Asbuk{section}.\arabic{figure}}
-    \renewcommand{\thetable}{\Asbuk{section}.\arabic{table}}
-    \renewcommand{\theequation}{\Asbuk{section}.\arabic{equation}}
-    \@addtoreset{figure}{section}
-    \@addtoreset{table}{section}
-    \@addtoreset{equation}{section}
-}
+        \renewcommand{\thefigure}{\Asbuk{section}.\arabic{figure}}
+        \renewcommand{\thetable}{\Asbuk{section}.\arabic{table}}
+        \renewcommand{\theequation}{\Asbuk{section}.\arabic{equation}}
+        \@addtoreset{figure}{section}
+        \@addtoreset{table}{section}
+        \@addtoreset{equation}{section}
 
-
-
-
-  %\secNumbering
+    }
+    \if@secNumbering
+        \secNumbering
+    \fi
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
   \renewcommand{\appendixname}{\cyr\CYRP\CYRR\CYRI\CYRL\CYRO\CYRZH\CYRE%
-  \CYRN\CYRI\CYRE}%
+    \CYRN\CYRI\CYRE}%
   \def\sectionname{\appendixname}%
   \addtocontents{toc}{\protect\redeflsection}%
-  \gdef\thesection{\@Asbuk\c@section}%
-
+  \gdef\thesection{\Asbuk{section}}%
+  \titlespacing{\section}
+  %{0cm}{1ex plus 0.1ex minus .2ex}{1.1ex plus.1ex}
+    {0cm}{3ex plus 1ex minus .2ex}{0.4ex plus.2ex}
   \titleformat{\section}[display]
     {\centering\normalfont\bfseries}
-  {\appendixname\hspace{1ex}\thesection}{1ex}{}
-  \titlespacing{\section}
-  {0cm}{1ex plus 01ex minus .2ex}{4ex plus.2ex}
+  {\appendixname\hspace{1ex}\thesection}{0ex}{}
+
 
   \titlecontents{section}
   [3ex]
