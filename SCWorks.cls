@@ -1,5 +1,5 @@
-\LoadClass{article}
-\RequirePackage[14pt]{extsizes}
+\LoadClass[14pt]{extarticle}
+%\RequirePackage[14pt]{extsizes}
 \RequirePackage[
   		a4paper, mag=1000,
   		left=2.5cm, right=1.5cm, top=2cm, bottom=2cm, bindingoffset=0cm,
@@ -10,6 +10,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{caption}
+\RequirePackage[inline]{enumitem}
 
 
 
@@ -17,25 +18,27 @@
 % --------------------------------------------------------------------------%
 % Input data
 % --------------------------------------------------------------------------%
-\def\chair#1{\gdef\@chair{#1}}\chair{}
+\def\chair#1{\gdef\@chair{#1}}\chair{\hbox to 3cm{\hrulefill}}
 \def\worktype#1{\gdef\@worktype{#1}}
+\def\worktitle{\@title}
 \def\typework#1{\gdef\@typework{#1}}
 \def\disserform#1{\gdef\@disserform{#1}}
 \def\disserformP#1{\gdef\@disserformP{#1}}
 \def\disserformV#1{\gdef\@disserformV{#1}}
-\def\course#1{\gdef\@course{#1}}
-\def\group#1{\gdef\@group{#1}}
+\def\course#1{\gdef\@course{#1}}\course{2}
+\def\group#1{\gdef\@group{#1}}\group{211}
 \def\department#1{\gdef\@department{#1}}\department{\cyr\cyrf\cyra\cyrk%
 \cyru\cyrl\cyrsftsn\cyrt\cyre\cyrt\cyra\ \CYRK\CYRN\cyri\CYRI\CYRT}
 \def\otdelenie#1{\gdef\@otdelenie{#1}}
+\def\studentName{\@author}
 %\def\studentName#1{\gdef\@studentName{#1}}
-\def\satitle#1{\gdef\@satitle{#1}}
-\def\saname#1{\gdef\@saname{#1}}
-\def\critictitle#1{\gdef\@critictitle{#1}}
-\def\criticname#1{\gdef\@criticname{#1}}
+\def\satitle#1{\gdef\@satitle{#1}}\satitle{\hbox to 3cm{\hrulefill}}
+\def\saname#1{\gdef\@saname{#1}}\saname{\hbox to 3cm{\hrulefill}}
+\def\critictitle#1{\gdef\@critictitle{#1}}\critictitle{\hbox to 3cm{\hrulefill}}
+\def\criticname#1{\gdef\@criticname{#1}}\criticname{\hbox to 3cm{\hrulefill}}
 \def\secrname#1{\gdef\@secrname{#1}}\secrname{\hbox to 3cm{\hrulefill}}
-\def\chtitle#1{\gdef\@chtitle{#1}}
-\def\chname#1{\gdef\@chname{#1}}
+\def\chtitle#1{\gdef\@chtitle{#1}}\chtitle{\hbox to 3cm{\hrulefill}}
+\def\chname#1{\gdef\@chname{#1}}\chname{\hbox to 3cm{\hrulefill}}
 %\def\year#1{\gdef\@year{#1}}
 \def\spectype#1{\gdef\@spectype{#1}}
 \def\spectyperod#1{\gdef\@spectyperod{#1}}
@@ -43,7 +46,7 @@
 \def\practtype#1{\gdef\@practtype{#1}}\practtype{\cyr\cyru\cyrch\cyre\cyrb%
 \cyrn\cyra\cyrya}
 \def\term#1{\gdef\@term{#1}}\term{2}
-\def\duration#1{\gdef\@duration{#1}}\duration{0}
+\def\duration#1{\gdef\@duration{#1}}\duration{2}
 \def\protnum#1{\gdef\@protnum{#1}}\protnum{\hbox to 1cm{\hrulefill}}
 \def\protdate#1{\gdef\@protdate{#1}}\protdate{\hbox to 3cm{\hrulefill}}
 \def\practStart#1{\gdef\@practStart{#1}}\practStart{\hbox to 3cm{\hrulefill}}
@@ -54,7 +57,7 @@
 \def\patitle#1{\gdef\@patitle{#1}}\patitle{\@satitle}
 \def\paname#1{\gdef\@paname{#1}}\paname{\@saname}
 
-\def\napravlenie#1{\gdef\@napravlenie{#1}}\napravlenie{}
+\def\napravlenie#1{\gdef\@napravlenie{#1}}\napravlenie{\hbox to 3cm{\hrulefill}}
 
 \def\studenttitle#1{\gdef\@studenttitle{#1}}\studenttitle{\cyr\cyrs\cyrt%
 \cyru\cyrd\cyre\cyrn\cyrt\cyra}
@@ -119,11 +122,11 @@
     \spectyperod{\cyr\cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri \cyryu}
     \workform{\cyr\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRR\CYRA}
     \disserform{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRA%
-    \CYRYA\ \CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRYA}
+    \CYRYA\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA}
     \disserformP{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRO%
-    \CYRISHRT\ \CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRI}
+    \CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRE}
     \disserformV{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRU%
-    \CYRYU\ \CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRYU}
+    \CYRYU\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRU}
 }
 
 \DeclareOption{coursework}{%
@@ -158,7 +161,8 @@
     \cyrp\cyru\cyrs\cyrk\cyrn\cyro\cyrishrt\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf%
     \cyri\cyrk\cyra\cyrc\cyri\cyro\cyrn\cyrn\cyro\cyrishrt\ \cyrr\cyra\cyrb%
     \cyro\cyrt\cyre}
-    \workname{\cyr\cyro\ \MakeLowercase{\@disserformP}}
+    %\workname{\cyr\cyro\ \MakeLowercase{\@disserformP}}
+    \workname{\@worktype\ \MakeLowercase{\@workform}}
     \renewcommand{\maketitle}{\MakeTitleReview}
     \renewcommand{\signatureline}{%
         \par\noindent%
@@ -173,7 +177,8 @@
     \worktype{\cyrn\cyra\ \cyrv\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyru%
     \cyryu\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro%
     \cyrn\cyrn\cyru\cyryu\ \cyrr\cyra\cyrb\cyro\cyrt\cyru}
-    \workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
+    %\workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
+    \workname{\@worktype\ \MakeLowercase{\@workform}}
     \renewcommand{\maketitle}{\MakeTitleAssign}
     \renewcommand{\signatureline}{%
 
@@ -188,7 +193,7 @@
         \cyrf\cyre\cyrd\cyrr\cyrery\ \@chair
 
         \vspace{1em}
-        \CYRP\cyrr\cyro\cyrt\cyro\cyrk\cyro\cyrl\ \No\ \@protnum\ \cyro%
+        \CYRP\cyrr\cyro\cyrt\cyro\cyrk\cyro\cyrl\ \textnumero\ \@protnum\ \cyro%
         \cyrt\ \@protdate
 
         \vspace{1em}
@@ -215,7 +220,8 @@
     \worktype{\cyrn\cyra\ \cyrv\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyru%
     \cyryu\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro%
     \cyrn\cyrn\cyru\cyryu\ \cyrr\cyra\cyrb\cyro\cyrt\cyru}
-    \workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
+    %\workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
+    \workname{\@worktype\ \MakeLowercase{\@workform}}
     \renewcommand{\maketitle}{\MakeTitleReview}
     \renewcommand{\signatureline}{%
         \par\noindent%
@@ -292,7 +298,7 @@
 % --------------------------------------------------------------------------%
 \renewcommand{\tableofcontents}%
 {\structformat\section*{\uppercase{\cyr\CYRS\CYRO\CYRD\CYRE\CYRR\CYRZH\CYRA%
-\CYRN\CYRI\CYRE}}\@starttoc{toc}
+\CYRN\CYRI\CYRE}}\secformat\@starttoc{toc}
 \thispagestyle{empty}}
 
 \renewcommand{\@dotsep}{1.5}
@@ -321,7 +327,7 @@
     {0cm}{3ex plus 1ex minus .2ex}{1.4ex plus.2ex}
     \titleformat{\section}[block]
     {\centering\bfseries}
-    {\thesection}{}{}
+    {\thesection}{0ex}{}
 }
 
 % Sections, subsections
@@ -334,13 +340,27 @@
     {\thesection}{1ex}{}
 }
 
+\newif\if@hyperrefloaded\@hyperrefloadedfalse
+\AtBeginDocument{\@ifpackageloaded{hyperref}%
+    {\@hyperrefloadedtrue}{\@hyperrefloadedfalse}%
+}
+
+%\RequirePackage{ifthen}
 \newcommand{\starsection}[1]{
     \structformat
-    \section*{#1}\phantomsection
+    \section*{#1}%
+    \if@hyperrefloaded
+        \phantomsection
+    \fi
     \addcontentsline{toc}{section}{#1}
     \setcounter{section}{0}
     \secformat
 }
+
+
+\setcounter{section}{0}
+\secformat
+
 
 \newcommand{\intro}{\starsection{\cyr\CYRV\CYRV\CYRE\CYRD\CYRE%
 \CYRN\CYRI\CYRE}}
@@ -702,39 +722,87 @@ C\cyro\cyrd\cyre\cyrr\cyrzh\cyra\cyrn\cyri\cyre\ \cyrr\cyra\cyrb%
 }
 }
 
+\AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
+\AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
 
 % --------------------------------------------------------------------------%
 % enumerations
 % --------------------------------------------------------------------------%
-\renewcommand\theenumi  {\@arabic\c@enumi}
-\renewcommand\theenumii {\@asbuk\c@enumii}
-\renewcommand\theenumiii{\@roman\c@enumiii}
-\renewcommand\theenumiv {\@Asbuk\c@enumiv}
-\newcommand\atheenumi{\@asbuk\c@enumi}
-\newcommand\atheenumii{\@asbuk\c@enumii}
-\renewcommand\labelenumi  {\theenumi.}
-\renewcommand\labelenumii {\theenumii.}
-\renewcommand\labelenumiii{\theenumiii.}
-\renewcommand\labelenumiv {\theenumiv.}
-\renewcommand\p@enumii  {\theenumi}
-\renewcommand\p@enumiii {\theenumi.\theenumii}
-\renewcommand\p@enumiv  {\p@enumiii.\theenumiii}
-\renewcommand\labelitemi  {\normalfont\bfseries\textemdash}
-\renewcommand\labelitemii {\normalfont\bfseries\textendash}
-\renewcommand\labelitemiii{\textperiodcentered}
-\renewcommand\labelitemiv {\textasteriskcentered}
+\setlist{noitemsep}
+%\setlist[1]{labelindent=\parindent} % < Usually a good idea
+\setlist[itemize]{
+%leftmargin=52pt,
+rightmargin=0pt,
+labelsep=7pt,
+labelwidth=20pt,
+itemindent=0pt,
+listparindent=0pt,
+topsep=0pt,%4pt plus 2pt minus 4pt,
+partopsep=0pt,% plus 1pt minus 1pt,
+parsep=0pt,% plus 1pt,
+itemsep=0 pt%\parsep
+}
+\setlist[enumerate]{
+%leftmargin=52pt,
+rightmargin=0pt,
+labelsep=5pt,
+labelwidth=20pt,
+itemindent=0pt,
+listparindent=0pt,
+topsep=0pt,%4pt plus 2pt minus 4pt,
+partopsep=0pt,% plus 1pt minus 1pt,
+parsep=0pt,% plus 1pt,
+itemsep=0pt%\parsep
+}
+\setlist[itemize,1]{label={\normalfont\bfseries\textemdash}}
+%\setlist[enumerate]{labelsep=*, leftmargin=1.5pc}
+\setlist[enumerate,1]{label=\arabic*., ref=\arabic*}
+\setlist[enumerate,2]{label=\emph{\asbuk*}), ref=\theenumi.\emph{\asbuk*}}
+\setlist[enumerate,3]{label=\roman*., ref=\theenumii.\roman*}
+\setlist[enumerate,4]{label=\Asbuk*., ref=\theenumiii.\Asbuk*}
+%\setlist[description]{font=\sffamily\bfseries}
 
-\renewcommand{\@listI}{%
-\leftmargin=52pt
-\rightmargin=0pt
-\labelsep=7pt
-\labelwidth=20pt
-\itemindent=0pt
-\listparindent=0pt
-\topsep=4pt plus 2pt minus 4pt
-\partopsep=0pt plus 1pt minus 1pt
-\parsep=0pt plus 1pt
-\itemsep=\parsep}
+%%%\renewcommand{\@listI}{%
+%%%\leftmargin=52pt
+%%%\rightmargin=0pt
+%%%\labelsep=7pt
+%%%\labelwidth=20pt
+%%%\itemindent=0pt
+%%%\listparindent=0pt
+%%%\topsep=4pt plus 2pt minus 4pt
+%%%\partopsep=0pt plus 1pt minus 1pt
+%%%\parsep=0pt plus 1pt
+%%%\itemsep=\parsep}
+
+%%%\renewcommand\theenumi  {\@arabic\c@enumi}
+%%%\renewcommand\theenumii {\asbuk{enumii}}
+%%%\renewcommand\theenumiii{\@roman\c@enumiii}
+%%%\renewcommand\theenumiv {\Asbuk{enumiv}}
+%%%\newcommand\atheenumi{\asbuk{enumi}}
+%%%\newcommand\atheenumii{\asbuk{enumii}}
+%%%\renewcommand\labelenumi  {\theenumi.}
+%%%\renewcommand\labelenumii {\theenumii.}
+%%%\renewcommand\labelenumiii{\theenumiii.}
+%%%\renewcommand\labelenumiv {\theenumiv.}
+%%%\renewcommand\p@enumii  {\theenumi}
+%%%\renewcommand\p@enumiii {\theenumi.\theenumii}
+%%%\renewcommand\p@enumiv  {\p@enumiii.\theenumiii}
+%%%\renewcommand\labelitemi  {\normalfont\bfseries\textemdash}
+%%%\renewcommand\labelitemii {\normalfont\bfseries\textendash}
+%%%\renewcommand\labelitemiii{\textperiodcentered}
+%%%\renewcommand\labelitemiv {\textasteriskcentered}
+%%%
+%%%\renewcommand{\@listI}{%
+%%%\leftmargin=52pt
+%%%\rightmargin=0pt
+%%%\labelsep=7pt
+%%%\labelwidth=20pt
+%%%\itemindent=0pt
+%%%\listparindent=0pt
+%%%\topsep=4pt plus 2pt minus 4pt
+%%%\partopsep=0pt plus 1pt minus 1pt
+%%%\parsep=0pt plus 1pt
+%%%\itemsep=\parsep}
 % --------------------------------------------------------------------------%
 
 
