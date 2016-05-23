@@ -163,6 +163,16 @@
     \typework{\cyr\cyrn\cyra\cyrp\cyri\cyrs\cyra\cyrn\cyra}
 }
 
+\DeclareOption{nir}{%
+    \workname{\cyr\CYRO\CYRT\CYRCH\CYRE\CYRT\ \CYRO\ \CYRN\CYRA\CYRU\CYRCH%
+    \CYRN\CYRO-\CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL%
+    \CYRSFTSN\CYRS\CYRK\CYRO\CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRE}
+    \worktype{\ \cyrr\cyra\cyrb\cyro\cyrt\cyra}
+    \renewcommand{\maketitle}{\CDMakeTitle}
+    %\workname{\MakeUppercase{\@disserform}}
+    \typework{\cyr\cyrn\cyra\cyrp\cyri\cyrs\cyra\cyrn\cyra}
+}
+
 \DeclareOption{pract}{%
     \worktype{\cyr\CYRO\cyrt\cyrch\cyre\cyrt\ \cyro\ \cyrp\cyrr\cyra\cyrk\cyrt%
     \cyri\cyrk\cyre}
