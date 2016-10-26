@@ -1,10 +1,10 @@
 \LoadClass[14pt]{extarticle}
 %\RequirePackage[14pt]{extsizes}
 \RequirePackage[
-  		a4paper, mag=1000,
-  		left=2.5cm, right=1.5cm, top=2cm, bottom=2cm, bindingoffset=0cm,
-		headheight=0cm, footskip=1cm, headsep=0cm
-	]{geometry}
+        a4paper, mag=1000,
+        left=2.5cm, right=1.5cm, top=2cm, bottom=2cm, bindingoffset=0cm,
+        headheight=0cm, footskip=1cm, headsep=0cm
+    ]{geometry}
 \RequirePackage{setspace}
 \RequirePackage{calc}
 \RequirePackage{titlesec}
@@ -101,6 +101,8 @@
     \CYRB\CYRO\CYRT\CYRA}
     \disserformP{\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRO\CYRISHRT\ \CYRR%
     \CYRA\CYRB\CYRO\CYRT\CYRE}
+    \disserformR{\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRO\CYRISHRT\ \CYRR%
+    \CYRA\CYRB\CYRO\CYRT\CYRERY}
     \disserformV{\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRU\CYRYU\ \CYRR\CYRA%
     \CYRB\CYRO\CYRT\CYRU}
 }
@@ -113,6 +115,8 @@
     \CYRYA\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA}
     \disserformP{\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRS\CYRK\CYRO%
     \CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRE}
+    \disserformR{\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRS\CYRK\CYRO%
+    \CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRERY}
     \disserformV{\CYRB\CYRA\CYRK\CYRA\CYRL\CYRA\CYRV\CYRR\CYRS\CYRK\CYRU%
     \CYRYU\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRU}
 }
@@ -125,6 +129,8 @@
     \CYRYA\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA}
     \disserformP{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRO%
     \CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRE}
+    \disserformR{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRO%
+    \CYRISHRT\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRERY}
     \disserformV{\CYRM\CYRA\CYRG\CYRI\CYRS\CYRT\CYRE\CYRR\CYRS\CYRK\CYRU%
     \CYRYU\ \CYRR\CYRA\CYRB\CYRO\CYRT\CYRU}
 }
@@ -147,6 +153,15 @@
     \typework{\cyr\cyrn\cyra\cyrp\cyri\cyrs\cyra\cyrn\cyra}
 }
 
+\DeclareOption{autoref}{%
+    \workname{\cyr\CYRA\CYRV\CYRT\CYRO\CYRR\CYRE\CYRF\CYRE\CYRR\CYRA\CYRT\ %
+    \MakeUppercase{\@disserformR}}
+    \worktype{\ \cyrr\cyra\cyrb\cyro\cyrt\cyra}
+    \renewcommand{\maketitle}{\CDMakeTitle}
+    %\workname{\MakeUppercase{\@disserform}}
+    \typework{\cyr\cyrn\cyra\cyrp\cyri\cyrs\cyra\cyrn\cyra}
+}
+
 \DeclareOption{pract}{%
     \worktype{\cyr\CYRO\cyrt\cyrch\cyre\cyrt\ \cyro\ \cyrp\cyrr\cyra\cyrk\cyrt%
     \cyri\cyrk\cyre}
@@ -161,8 +176,9 @@
     \cyrp\cyru\cyrs\cyrk\cyrn\cyro\cyrishrt\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf%
     \cyri\cyrk\cyra\cyrc\cyri\cyro\cyrn\cyrn\cyro\cyrishrt\ \cyrr\cyra\cyrb%
     \cyro\cyrt\cyre}
-    %\workname{\cyr\cyro\ \MakeLowercase{\@disserformP}}
-    \workname{\@worktype\ \MakeLowercase{\@workform}}
+    \workname{\cyr\cyrn\cyra\cyru\cyrch\cyrn\cyro\cyrg\cyro\ \cyrr\cyru\cyrk%
+    \cyro\cyrv\cyro\cyrd\cyri\cyrt\cyre\cyrl\cyrya\ \cyro\ \MakeLowercase{\@disserformP}}
+    %\workname{\@worktype\ \MakeLowercase{\@workform}}
     \renewcommand{\maketitle}{\MakeTitleReview}
     \renewcommand{\signatureline}{%
         \par\noindent%
@@ -220,8 +236,8 @@
     \worktype{\cyrn\cyra\ \cyrv\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyru%
     \cyryu\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro%
     \cyrn\cyrn\cyru\cyryu\ \cyrr\cyra\cyrb\cyro\cyrt\cyru}
-    %\workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
-    \workname{\@worktype\ \MakeLowercase{\@workform}}
+    \workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
+    %\workname{\@worktype\ \MakeLowercase{\@workform}}
     \renewcommand{\maketitle}{\MakeTitleReview}
     \renewcommand{\signatureline}{%
         \par\noindent%
@@ -453,14 +469,16 @@
 \CYRS\CYRU\CYRD\CYRA\CYRR\CYRS\CYRT\CYRV\CYRE\CYRN\CYRN\CYRO\CYRE\ %
 \CYRB\CYRYU\CYRD\CYRZH\CYRE\CYRT\CYRN\CYRO\CYRE\ \CYRO\CYRB\CYRR\CYRA%
 \CYRZ\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL\CYRSFTSN\CYRN\CYRO\CYRE\ \CYRU%
-\CYRCH\CYRR\CYRE\CYRZH\CYRD\CYRE\CYRN\CYRI\CYRE\\ \CYRV\CYRERY\CYRS%
-\CYRSH\CYRE\CYRG\CYRO\ \CYRP\CYRR\CYRO\CYRF\CYRE\CYRS\CYRS\CYRI\CYRO%
-\CYRN\CYRA\CYRL\CYRSFTSN\CYRN\CYRO\CYRG\CYRO\ \CYRO\CYRB\CYRR\CYRA\CYRZ%
+\CYRCH\CYRR\CYRE\CYRZH\CYRD\CYRE\CYRN\CYRI\CYRE\ \CYRV\CYRERY\CYRS%
+\CYRSH\CYRE\CYRG\CYRO\ \CYRO\CYRB\CYRR\CYRA\CYRZ%
 \CYRO\CYRV\CYRA\CYRN\CYRI\CYRYA\\
-<<\CYRS\CYRA\CYRR\CYRA\CYRT\CYRO\CYRV\CYRS\CYRK\CYRI\CYRISHRT\ \CYRG%
-\CYRO\CYRS\CYRU\CYRD\CYRA\CYRR\CYRS\CYRT\CYRV\CYRE\CYRN\CYRN\CYRERY%
-\CYRISHRT\ \CYRU\CYRN\CYRI\CYRV\CYRE\CYRR\CYRS\CYRI\CYRT\CYRE\CYRT\\ %
-\CYRI\CYRM\CYRE\CYRN\CYRI\ \CYRN.\CYRG. \CYRCH\CYRE\CYRR\CYRN\CYRERY%
+<<\CYRS\CYRA\CYRR\CYRA\CYRT\CYRO\CYRV\CYRS\CYRK\CYRI\CYRISHRT\ %
+\CYRN\CYRA\CYRC\CYRI\CYRO\CYRN\CYRA\CYRL\CYRSFTSN\CYRN\CYRERY%
+\CYRISHRT\ \CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL%
+\CYRSFTSN\CYRS\CYRK\CYRI\CYRISHRT\ \\
+\CYRG\CYRO\CYRS\CYRU\CYRD\CYRA\CYRR\CYRS\CYRT\CYRV\CYRE\CYRN\CYRN\CYRERY%
+\CYRISHRT\ \CYRU\CYRN\CYRI\CYRV\CYRE\CYRR\CYRS\CYRI\CYRT\CYRE\CYRT\ %
+\CYRI\CYRM\CYRE\CYRN\CYRI~\CYRN.\,\CYRG.\,\CYRCH\CYRE\CYRR\CYRN\CYRERY%
 \CYRSH\CYRE\CYRV\CYRS\CYRK\CYRO\CYRG\CYRO>>\vspace{14pt}\\}}
 
 \newcommand{\CDMakeTitle}
@@ -588,7 +606,7 @@
 {
 \centering
 \textbf{\MakeUppercase{\@reviewtype}}\\[-0.3em]
-{\small \@workname}\\[0.3em]
+\textbf{\@workname}\\[0.3em]
 <<{\MakeUppercase{\@title}}>>
 
 \@studenttitle\ \@course\ \cyrk\cyru\cyrr\cyrs\cyra\ %
@@ -635,7 +653,7 @@
 \@studenttitle\ \@course\ \cyrk\cyru\cyrr\cyrs\cyra\ %
 \@department\\
 \MakeUppercase{\@author}\\
-\CYRT\cyre\cyrm\cyra\ \cyrr\cyra\cyrb\cyro\cyrt\cyrery: {\MakeUppercase{\@title}}
+\textbf{\CYRT\cyre\cyrm\cyra\ \cyrr\cyra\cyrb\cyro\cyrt\cyrery:} <<{\MakeUppercase{\@title}}>>
 
 }
 
