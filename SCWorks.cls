@@ -59,6 +59,8 @@
 \def\paname#1{\gdef\@paname{#1}}\paname{\@saname}
 
 \def\napravlenie#1{\gdef\@napravlenie{#1}}\napravlenie{\hbox to 3cm{\hrulefill}}
+\def\Napravlenie{\@napravlenie}
+
 
 \def\studenttitle#1{\gdef\@studenttitle{#1}}\studenttitle{\cyr\cyrs\cyrt%
 \cyru\cyrd\cyre\cyrn\cyrt\cyra}
@@ -204,8 +206,8 @@
     \worktype{\cyrn\cyra\ \cyrv\cyrery\cyrp\cyru\cyrs\cyrk\cyrn\cyru%
     \cyryu\ \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyro%
     \cyrn\cyrn\cyru\cyryu\ \cyrr\cyra\cyrb\cyro\cyrt\cyru}
-    %\workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
-    \workname{\@worktype\ \MakeLowercase{\@workform}}
+    \workname{\cyr\cyrn\cyra\ \MakeLowercase{\@disserformV}}
+    %\workname{\@worktype\ \MakeLowercase{\@workform}}
     \renewcommand{\maketitle}{\MakeTitleAssign}
     \renewcommand{\signatureline}{%
 
