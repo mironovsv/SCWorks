@@ -500,12 +500,12 @@
 \shapka
 
 \vspace{0.5cm}
-\begin{flushright}
+\begin{flushleft}
 \parbox{8cm}{
 \raggedright
 \CYRK\cyra\cyrf\cyre\cyrd\cyrr\cyra\ \@chair
 }
-\end{flushright}
+\end{flushleft}
 
 \vspace{1cm}
 {\centering
@@ -649,7 +649,7 @@
 \end{center}
 
 {
-\raggedleft
+\raggedright
 \parbox{16em}{
 \raggedright
 \CYRK\cyra\cyrf\cyre\cyrd\cyrr\cyra\ \@chair
