@@ -89,9 +89,11 @@
 \newcommand{\signatureline}{}
 
 % --------------------------------------------------------------------------%
+\newcommand{\scaleUnivName}{0.97}
 
 \DeclareOption{times}{%
     \renewcommand{\rmdefault}{ftm}
+    \renewcommand{\scaleUnivName}{1.0}
 }
 
 \DeclareOption{spec}{%
@@ -473,37 +475,77 @@
 % --------------------------------------------------------------------------%
 % Title pages
 % --------------------------------------------------------------------------%
+%\newcommand{\shapka}{{\centering \CYRM\CYRI\CYRN\CYRO\CYRB\CYRR\CYRN\CYRA%
+%\CYRU\CYRK\CYRI\ \CYRR\CYRO\CYRS\CYRS\CYRI\CYRI\\ %
+%\CYRF\cyre\cyrd\cyre\cyrr\cyra\cyrl\cyrsftsn\cyrn\cyro\cyre\ \cyrg\cyro%
+%\cyrs\cyru\cyrd\cyra\cyrr\cyrs\cyrt\cyrv\cyre\cyrn\cyrn\cyro\cyre\ %
+%\cyrb\cyryu\cyrd\cyrzh\cyre\cyrt\cyrn\cyro\cyre\ \cyro\cyrb\cyrr\cyra%
+%\cyrz\cyro\cyrv\cyra\cyrt\cyre\cyrl\cyrsftsn\cyrn\cyro\cyre\ \cyru%
+%\cyrch\cyrr\cyre\cyrzh\cyrd\cyre\cyrn\cyri\cyre\ \cyrv\cyrery\cyrs%
+%\cyrsh\cyre\cyrg\cyro\ \cyro\cyrb\cyrr\cyra\cyrz%
+%\cyro\cyrv\cyra\cyrn\cyri\cyrya\\
+%\textbf{<<\CYRS\CYRA\CYRR\CYRA\CYRT\CYRO\CYRV\CYRS\CYRK\CYRI\CYRISHRT\ %
+%\CYRN\CYRA\CYRC\CYRI\CYRO\CYRN\CYRA\CYRL\CYRSFTSN\CYRN\CYRERY%
+%\CYRISHRT\ \CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL%
+%\CYRSFTSN\CYRS\CYRK\CYRI\CYRISHRT\ %
+%\CYRG\CYRO\CYRS\CYRU\CYRD\CYRA\CYRR\CYRS\CYRT\CYRV\CYRE\CYRN\CYRN\CYRERY%
+%\CYRISHRT\ \CYRU\CYRN\CYRI\CYRV\CYRE\CYRR\CYRS\CYRI\CYRT\CYRE\CYRT\ %
+%\CYRI\CYRM\CYRE\CYRN\CYRI~\CYRN.\,\CYRG.\,\CYRCH\CYRE\CYRR\CYRN\CYRERY%
+%\CYRSH\CYRE\CYRV\CYRS\CYRK\CYRO\CYRG\CYRO>>}\\}}
+
+%\newcommand{\shapka}{{\centering \CYRM\CYRI\CYRN\CYRO\CYRB\CYRR\CYRN\CYRA%
+%\CYRU\CYRK\CYRI\ \CYRR\CYRO\CYRS\CYRS\CYRI\CYRI\\ \hspace{-1em}%
+%\CYRF\cyre\cyrd\cyre\cyrr\cyra\cyrl\cyrsftsn\cyrn\cyro\cyre\ \cyrg\cyro%
+%\cyrs\cyru\cyrd\cyra\cyrr\cyrs\cyrt\cyrv\cyre\cyrn\cyrn\cyro\cyre\ %
+%\cyrb\cyryu\cyrd\cyrzh\cyre\cyrt\cyrn\cyro\cyre\ \cyro\cyrb\cyrr\cyra%
+%\cyrz\cyro\cyrv\cyra\cyrt\cyre\cyrl\cyrsftsn\cyrn\cyro\cyre\ \cyru%
+%\cyrch\cyrr\cyre\cyrzh\cyrd\cyre\cyrn\cyri\cyre\ \\\cyrv\cyrery\cyrs%
+%\cyrsh\cyre\cyrg\cyro\ \cyro\cyrb\cyrr\cyra\cyrz%
+%\cyro\cyrv\cyra\cyrn\cyri\cyrya\\\hspace{-2em}
+%{
+%\textbf{<<\CYRS\CYRA\CYRR\CYRA\CYRT\CYRO\CYRV\CYRS\CYRK\CYRI\CYRISHRT\ %
+%\CYRN\CYRA\CYRC\CYRI\CYRO\CYRN\CYRA\CYRL\CYRSFTSN\CYRN\CYRERY%
+%\CYRISHRT\ \CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL%
+%\CYRSFTSN\CYRS\CYRK\CYRI\CYRISHRT}} \\%
+%{\textbf{\CYRG\CYRO\CYRS\CYRU\CYRD\CYRA\CYRR\CYRS\CYRT\CYRV\CYRE\CYRN\CYRN\CYRERY%
+%\CYRISHRT\ \CYRU\CYRN\CYRI\CYRV\CYRE\CYRR\CYRS\CYRI\CYRT\CYRE\CYRT}} \\%
+%{\textbf{\CYRI\CYRM\CYRE\CYRN\CYRI~\CYRN.\,\CYRG.\,\CYRCH\CYRE\CYRR\CYRN\CYRERY%
+%\CYRSH\CYRE\CYRV\CYRS\CYRK\CYRO\CYRG\CYRO>>}}\\}}
+
 \newcommand{\shapka}{{\centering \CYRM\CYRI\CYRN\CYRO\CYRB\CYRR\CYRN\CYRA%
 \CYRU\CYRK\CYRI\ \CYRR\CYRO\CYRS\CYRS\CYRI\CYRI\\ %
 \CYRF\cyre\cyrd\cyre\cyrr\cyra\cyrl\cyrsftsn\cyrn\cyro\cyre\ \cyrg\cyro%
 \cyrs\cyru\cyrd\cyra\cyrr\cyrs\cyrt\cyrv\cyre\cyrn\cyrn\cyro\cyre\ %
 \cyrb\cyryu\cyrd\cyrzh\cyre\cyrt\cyrn\cyro\cyre\ \cyro\cyrb\cyrr\cyra%
 \cyrz\cyro\cyrv\cyra\cyrt\cyre\cyrl\cyrsftsn\cyrn\cyro\cyre\ \cyru%
-\cyrch\cyrr\cyre\cyrzh\cyrd\cyre\cyrn\cyri\cyre\ \cyrv\cyrery\cyrs%
+\cyrch\cyrr\cyre\cyrzh\cyrd\cyre\cyrn\cyri\cyre\ \\\cyrv\cyrery\cyrs%
 \cyrsh\cyre\cyrg\cyro\ \cyro\cyrb\cyrr\cyra\cyrz%
-\cyro\cyrv\cyra\cyrn\cyri\cyrya\\
-<<\CYRS\CYRA\CYRR\CYRA\CYRT\CYRO\CYRV\CYRS\CYRK\CYRI\CYRISHRT\ %
+\cyro\cyrv\cyra\cyrn\cyri\cyrya\\[0.2em]
+
+\centerline{\scalebox{\scaleUnivName}[1.0]{\parbox[t]{1.1\textwidth}
+{\centering
+\textbf{<<\CYRS\CYRA\CYRR\CYRA\CYRT\CYRO\CYRV\CYRS\CYRK\CYRI\CYRISHRT\ %
 \CYRN\CYRA\CYRC\CYRI\CYRO\CYRN\CYRA\CYRL\CYRSFTSN\CYRN\CYRERY%
 \CYRISHRT\ \CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL%
-\CYRSFTSN\CYRS\CYRK\CYRI\CYRISHRT\ \\
+\CYRSFTSN\CYRS\CYRK\CYRI\CYRISHRT\ \\%
 \CYRG\CYRO\CYRS\CYRU\CYRD\CYRA\CYRR\CYRS\CYRT\CYRV\CYRE\CYRN\CYRN\CYRERY%
-\CYRISHRT\ \CYRU\CYRN\CYRI\CYRV\CYRE\CYRR\CYRS\CYRI\CYRT\CYRE\CYRT\ %
+\CYRISHRT\ \CYRU\CYRN\CYRI\CYRV\CYRE\CYRR\CYRS\CYRI\CYRT\CYRE\CYRT\ \\%
 \CYRI\CYRM\CYRE\CYRN\CYRI~\CYRN.\,\CYRG.\,\CYRCH\CYRE\CYRR\CYRN\CYRERY%
-\CYRSH\CYRE\CYRV\CYRS\CYRK\CYRO\CYRG\CYRO>> (\CYRS\CYRG\CYRU)\vspace{14pt}\\}}
+\CYRSH\CYRE\CYRV\CYRS\CYRK\CYRO\CYRG\CYRO>>}}}}}}
 
 \newcommand{\CDMakeTitle}
 {
 \thispagestyle{empty}
 \shapka
-
-\vspace{0.5cm}
-\begin{flushleft}
-\parbox{8cm}{
-\raggedright
+%\vspace{0.5cm}
+\begin{center}
+%\parbox{8cm}{
+%\raggedright
 \CYRK\cyra\cyrf\cyre\cyrd\cyrr\cyra\ \@chair
-}
-\end{flushleft}
+%}
+\end{center}
 
+\vspace{14pt}
 \vspace{1cm}
 {\centering
 \textbf{\MakeUppercase{\@title}}
@@ -646,11 +688,9 @@
 \end{center}
 
 {
-\raggedright
-\parbox{16em}{
-\raggedright
+\centering
 \CYRK\cyra\cyrf\cyre\cyrd\cyrr\cyra\ \@chair
-}
+
 
 \vspace{6em}
 \centering
