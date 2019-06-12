@@ -10,6 +10,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{caption}
+\RequirePackage{graphicx}
 \RequirePackage[inline]{enumitem}
 
 
