@@ -12,9 +12,7 @@
 \RequirePackage{caption}
 \RequirePackage{graphicx}
 \RequirePackage[inline]{enumitem}
-
-
-
+\RequirePackage{times}
 
 % --------------------------------------------------------------------------%
 % Input data
@@ -76,9 +74,7 @@
 \def\workname#1{\gdef\@workname{#1}}
 
 %\hbox to 3cm{\hrulefill}
-
 % --------------------------------------------------------------------------%
-
 
 \newcommand{\signature}[2]{
 \hbox to 7cm{#1\hfill} \hbox to 3cm{\hrulefill} \hbox to 6cm{\hfill #2}}
@@ -93,7 +89,7 @@
 \newcommand{\scaleUnivName}{0.97}
 
 \DeclareOption{times}{%
-    \renewcommand{\rmdefault}{ftm}
+%    \renewcommand{\rmdefault}{ftm}
     \renewcommand{\scaleUnivName}{1.0}
 }
 
@@ -875,6 +871,8 @@ itemsep=0pt%\parsep
 % --------------------------------------------------------------------------%
 
 
+% --------------------------------------------------------------------------%
+% --------------------------------------------------------------------------%
 % --------------------------------------------------------------------------%
 % References
 % --------------------------------------------------------------------------%
